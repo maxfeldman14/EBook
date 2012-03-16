@@ -1,0 +1,28 @@
+6 sections for content
+secure coding- buffer overflow, fuzz testing
+secure architecture
+mobile security
+cryptography
+web security
+networks and malware
+
+me
+networks and malware (after midterm)
+crypto
+mobile
+
+richard
+secure coding, architecture
+web security
+
+===========================
+
+look into popcorn js
+add a couple example movies
+etc
+summarize material
+standard markup language- support for title, section, img, video (with quiz)
+
+html viewer
+text content, quizzes
+

@@ -1,0 +1,41 @@
+Title <title name>
+
+Section <section name>
+
+Image <Image_location caption>
+
+Video <Video_location(s) caption>
+
+Comment:
+
+##
+
+Delimiter:
+
+%%
+
+Escape:
+
+\##
+
+\%%
+
+EG:
+
+%%Title Example
+
+%%Section Learning
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ligula massa, pulvinar in ullamcorper non, lacinia id dolor. Nunc porttitor volutpat elit, ultricies tincidunt dui rutrum sit amet. 
+
+Aenean rhoncus posuere luctus. Phasellus sagittis elementum quam vitae faucibus. Curabitur non metus quis odio auctor dapibus eget venenatis arcu. Maecenas ullamcorper sem ac velit accumsan molestie. Nunc sed ipsum justo. Aliquam in mauris vel nulla porta volutpat at quis sem.
+
+%%Section More Learning
+
+Fusce quis nisl quis enim placerat egestas nec quis dolor. Fusce erat nisl, rutrum et pellentesque et, cursus vel velit. Duis volutpat augue quis leo aliquet id egestas diam placerat. Nam sagittis massa ac nibh scelerisque mattis. Donec porta pharetra nisl, vitae accumsan nisl gravida vel.
+
+%%Image C:\\test.jpg BUT CHECK OUT THIS DOPE PICTURE!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ligula massa, pulvinar in ullamcorper non, lacinia id dolor. Nunc porttitor volutpat elit, ultricies tincidunt dui rutrum sit amet. 
+
+%%Movie C:\\test.mp4 C:\\test.whatever AND MOVIES!
