@@ -1,0 +1,76 @@
+<Title> Mobile </Title>
+
+<Section> Trends </Section>
+web and app-based threats are increasing in number, sophistication
+Phishing: mobile users more likely to fall to attack
+Drive-bydownloads: circumvent markets
+Direct exploitation - Mobile sites may lag in https, other security measure
+
+<Section> Mobile Platform Security Models </Section>
+Operating system: Unix, Windows
+Approval process for applications: 
+Market: Vendor controlled/Open
+App signing: Vendor-issued/self-signed
+Programming language for applications:
+Managed execution: Java, .Net
+Native execution: Objective 
+
+Apple iOS Security:
+Device security: Methods that prevent unauthorized use of the device
+consider: strong passcodes (may expire), number failed attempts, etc
+Data security: Protecting data at rest, even when a device is lost or stolen
+consider: hardware encryption, local and remote wipe, etc
+Network security: Networking protocols and the encryption of data in transmission
+consider: built-in cisco, ipsec. ssl, certificates, RSA SecurID
+App security: Secure platform foundation
+consider: sandobx, preventing code generation, code-signing, keychain services
+
+Android Secuirty:
+Isolation:
+multi-user Linux operating system 
+each application normally runs as a different user
+Communication between applications:
+May share same Linux user ID:
+Access files from each other
+May share same Linux process and Dalvik VM
+Communicate through application framework
+Battery life: apps must conserve power, but most foreground activity never killed
+Android market: not reviewed by Google
+Activity – one-user task
+Service – Java daemon that runs in background
+Intents – asynchronous messaging system
+Content provider - Store and share data using a relational database interface
+Broadcast receiver - “mailboxes” for messages from other applications
+Exploit prevention: open source, overflow prevention, application sandbox
+dlmalloc (Doug Lea) -
+Stores meta data in band, Heap consolidation attack, change to improve security
+sandbox: Class loader, Verifier and JVM run-time tests, Security Manager
+Security Manager: Java library functions call security manager, which answers at run time
+iOS vs Android
+App approval process:
+Android apps from open app store, iOS vendor-controlled store of vetted apps
+Application permissions:
+Android permission based on install-time manifest, all iOS apps have same set of “sandbox” privileges
+App programming language: Android apps written in Java; no buffer overflow…, iOS apps written in Objective-C
+Data protection: Android PIN code, iOS has delayed lock, answer calls w/o code, other features
+AndroidManifest.xml - contains app name, components list, and permissions used
+
+Windows Phone OS 7.0 Security:
+isolation, least privelege, chambers (security, isolation boundary, implemented with policy system):
+security policy of chamber defines what OS capabilities the processes in chamber can access
+isoalation: Every application on Windows Phone 7 runs in its own isolated chamber
+Application Approval: Developers register before submitting application Marketplace Hub, then use VeriSign for their code
+Four chambers:
+Trusted Computing Base (TCB) chamber – unrestricted access to most resources
+can modify policy and enforce the security model,  kernel and kernel-mode drivers run in the TC
+Elevated Rights Chamber (ERC) can access all resources except security policy.
+Standard Rights Chamber (SRC) is default for preinstalled application
+Least Privileged Chamber (LPC) is default chamber for all non-Microsoft application
+.NET Code Access Security- default security policy, permissions limiting access, deny and revert
+code requires permission, can be denied- do a stackwalk
+
+
+
+
+
+

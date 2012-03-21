@@ -1,0 +1,68 @@
+<Title> Cryptography </Title>
+
+<Section> Background </Section>
+Goal 1 = secure communication
+SSL/TLS: 
+1. handshake protocol: to establish shared key (using public key crypto)
+2. record layer: transmit data using this key
+Goal 2 = protected files
+E, D: cipher
+k: secret key
+m, c: plaintext, ciphertext
+n:  nonce   (aka IV)
+Encryption algorithm is publicly known - never use a proprietary cipher
+Use cases:
+single use (one time) key:
+only used once to encypt one message. no need for nonce.
+eg. one time pad. c = E(k,m) = m XOR k
+D(k,c) = c XOR k
+multi use (many time) key:
+used to encrypt multiple messages. need either unique or random nonce.
+stream cipher:
+c = E(k,m) = m XOR PRG(k)
+if key is used more than once - insecure:
+c1 XOR c2 = m1 XOR m2
+
+<Section> Block Ciphers </Section>
+block ciphers - built by iteration
+R(k,m): round function
+input: (m,k), repeat simple mixing operation several times
+difficult to design: must resist differential, linear, brute-force attacks, many others
+
+PRF:      F:  K x X  ->  Y    such that:    
+exists “efficient” algorithm to eval. F(k,x)
+PRP:     E:   K x X  ->  X     such that:
+1. Exists “efficient” algorithm to eval. E(k,x)
+2. The func   E( k, . )   is  one-to-one
+3. Exists “efficient” algorithm for inverse  D(k,x)
+
+A block cipher is a PRP
+
+Secure PRFs, PRPs
+A PRF   F: K ? X  ?  Y  is secure if 
+       F(k, . )  is indistinguishable from a random func.  f: X -> Y 
+A PRP   E: K ? X  ?  X  is secure if 
+       E(k, . )  is indisting. from a random perm.  pi: X -> X
+	   
+<Section> Using block ciphers </Section>
+ECB: if m1 = m2, then c1 = c2
+CBC with IV: best to use a random IV for every message
+CTR mode with random IV: parallelizable
+
+<Section> Message Integrity </Section>
+provide integrity, not confidentiality.
+non-keyed checksum (CRC) is an insecure MAC
+attacker can receive tag for any message they choose-
+goal is to produce a new valid message/tag pair
+A secure PRF gives a secure MAC:
+– S(k,m) = F(k,m)
+– V(k,m,t):   output `yes’ if  t = F(k,m) and `no’ otherwise
+ECBC, HMAC (hash-MAC: most common for internet), PMAC (parallel MAC)
+
+<Section> Authenticated Encryption </Section>
+CCM: CBC-MAC then CTR mode encryption
+GCM: CTR mode encryption then MAC
+EAX: CTR mode encryption then OMAC
+All support AEAD: (auth. enc. with associated data)
+Power cryptanalysis- analyze power consumption-
+~1000 ciphertexts to expose secret key
